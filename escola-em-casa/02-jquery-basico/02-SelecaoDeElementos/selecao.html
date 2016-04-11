@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<meta charset="UTF-8">
+<head>
+	<script src="./../lib/jquery.js"></script>
+	<script>
+		$(document).ready(function(){
+			var porId = $('#idUnico');
+			console.log(porId);
+			//Quanto melhor especificar, melhor o desempenho
+			var porClassName = $('div.classe');
+
+			var porAtributo = $('div[name=divisao]');
+
+			var porComposicaoSeletores = $('#container ul.pessoa li'); 
+			console.log(porComposicaoSeletores);
+		});
+	</script>
+</head>
+<body>
+	<div id="idUnico">ID ÚNICO</div>
+	<div class="classe">CLASSE</div>
+	<div name="divisao">DIV</div>
+	<div id="container">
+		<ul class="pessoa">
+			<li>Pessoa1</li>
+			<li>Pessoa2</li>
+			<li>Pessoa3</li>
+			<li>Pessoa4</li>
+		</ul>
+	</div>
+</body>
+</html> 
