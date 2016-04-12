@@ -27,6 +27,14 @@
 
 			//encadeamento
 			$('#encadeamento').find('div').eq(3).addClass('blue');
+			$('#encadeamento').find('div').click(function(){
+				$(this).addClass('black');
+			});
+			$('#encadeamento').find('div').hover(function(){
+				$(this).addClass('green');
+			}, function(){
+				$(this).removeClass('green');
+			});
 		});
 	</script>
 	<style type="text/css">
@@ -35,7 +43,18 @@
 		}
 
 		.blue{
-			background-color: blue;
+			background-color : blue;
+			border: 2px solid blue;
+		}
+
+		.black{
+			background-color: black;
+			border: 2px solid black!important;
+		}
+
+		.green{
+			background-color : green;
+			border :2px solid green!important;
 		}
 
 		div .bloco{
