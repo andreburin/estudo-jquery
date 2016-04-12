@@ -5,17 +5,47 @@
 	<script src="./../lib/jquery.js"></script>
 	<script>
 		$(document).ready(function(){
-			var porId = $('#idUnico');
-			console.log(porId);
+			var $porId = $('#idUnico');
 			//Quanto melhor especificar, melhor o desempenho
-			var porClassName = $('div.classe');
+			var $porClassName = $('div.classe');
 
-			var porAtributo = $('div[name=divisao]');
+			var $porAtributo = $('div[name=divisao]');
 
-			var porComposicaoSeletores = $('#container ul.pessoa li'); 
-			console.log(porComposicaoSeletores);
+		   /*
+		    *Todos os itens da lista com a classe pessoa dentro de um 
+			*
+			*/
+			var $porComposicaoSeletores = $('#container ul.pessoa li'); 
+
+			//primeiro link com a casse external
+			var $porPseudoSeletores = $('a.external:first');
+			console.log($porPseudoSeletores);
+
+			//Todos os input´s do formulario com id = meuFormulario
+			var $porPseudoSeletoresForm = $('#meuFormulario :input');
+			console.log($porPseudoSeletoresForm);
+
+			//encadeamento
+			$('#encadeamento').find('div').eq(3).addClass('blue');
 		});
 	</script>
+	<style type="text/css">
+		input{
+			margin: 5px 5px;
+		}
+
+		.blue{
+			background-color: blue;
+		}
+
+		div .bloco{
+			width: 60px;
+			height: 60px;
+			margin: 10px;
+			float: left;
+			border: 2px solid blue;
+		}
+	</style>
 </head>
 <body>
 	<div id="idUnico">ID ÚNICO</div>
@@ -28,6 +58,27 @@
 			<li>Pessoa3</li>
 			<li>Pessoa4</li>
 		</ul>
+	</div>
+	<a href="#" class="external">Pseudo seletores</a><br/>
+	<a href="#" class="external">Pseudo seletores2</a><br/>
+	<br/>
+	<form id="meuFormulario">
+		<label>Campo1</label>
+		<input name="campo1" value="" size="100"/><br/>
+		<label>Campo2</label>
+		<input name="campo2" value="" size="100"/><br/>
+		<label>Campo3</label>
+		<input name="campo3" value="" size="100"/><br/>
+	</form>
+	<br>
+	<div id="encadeamento">
+		<h2>Encadeamento</h2>
+		<div class="bloco"></div>
+		<div class="bloco"></div>
+		<div class="bloco"></div>
+		<div class="bloco"></div>
+		<div class="bloco"></div>
+		<div class="bloco"></div>
 	</div>
 </body>
 </html> 
